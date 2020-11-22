@@ -1,0 +1,29 @@
+{
+  "name": "robot",
+  "version": "1.0.0",
+  "description": "The application is a simulation of a toy robot moving on a square tabletop of dimensions 5 units x 5 units",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node start.js",
+    "format": "prettier --write \"**/*.js\"",
+    "lint": "eslint '**/*.js' --fix",
+    "build": "webpack --mode production"
+  },
+  "author": "Anonymous",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.12.7",
+    "babel-eslint": "^10.1.0",
+    "babel-install": "2.1.0",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.0"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "requirejs": "^2.3.6"
+  }
+}
