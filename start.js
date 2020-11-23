@@ -1,6 +1,6 @@
+/* eslint-disable no-undef */
+// Start of the application
 "use strict";
 
-// Start of the application
-
-// eslint-disable-next-line no-console
-console.log("Test");
+var app = require("./app/startRobotApp/robotApp");
+app.run();
