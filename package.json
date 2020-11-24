@@ -4,7 +4,7 @@
   "description": "The application is a simulation of a toy robot moving on a square tabletop of dimensions 5 units x 5 units",
   "main": "app.js",
   "scripts": {
-    "test": "jest",
+    "test": "jasmine",
     "start": "node start.js",
     "format": "prettier --write \"**/*.js\"",
     "lint": "eslint '**/*.js' --fix",
@@ -19,6 +19,7 @@
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "jasmine": "^3.6.3",
     "jest": "^26.6.3",
     "prettier": "^2.2.0"
   },
