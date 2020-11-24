@@ -11,14 +11,14 @@ stdin.on("data", function (data) {
   getOutput(data);
 });
 
-function robotApp() {}
+function RobotApp() {}
 
 /**
  * @static
  */
-robotApp.run = function () {
+RobotApp.run = function () {
   stdout.write(
-    "WELCOME! Tell the Robot your first command. Begin by placing the Robot on the playground - PLACE X, Y, F." +
+    "WELCOME! Tell the Robot your first command. Begin by placing the Robot position on the playground - PLACE x, y, F." +
       EOL +
       "Click 'q' to exit." +
       EOL +
@@ -27,4 +27,4 @@ robotApp.run = function () {
   stdin.resume();
 };
 
-module.exports = robotApp;
+module.exports = RobotApp;
