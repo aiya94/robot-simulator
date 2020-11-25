@@ -1,6 +1,6 @@
-/* eslint-disable no-undef */
-// Start of the application
 "use strict";
+
+// Start of the application
 
 var app = require("./app/startRobotApp/robotApp");
 app.run();

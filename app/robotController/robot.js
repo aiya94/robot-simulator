@@ -13,7 +13,7 @@ function Robot(global, playgroud, messenger) {
     (this._playground = playgroud),
     (this._messenger = messenger),
     (this._firstStep = false),
-    (this._oCurrentPosition = {
+    (this.robotCurrentPosition = {
       x: undefined,
       y: undefined,
       f: undefined,
@@ -40,7 +40,7 @@ var prototype = {
     }
 
     if (this._checkPositionInPlayground(arg.x, arg.y)) {
-      return new Error("Can't place the robot in that square, it will fall.");
+      return new Error("Can't place the robot in that square, it will fall");
     }
 
     this._setRobotPosition(arg.x, arg.y, arg.f);
@@ -59,12 +59,12 @@ var prototype = {
     var x, y, f;
 
     if (!this._firstStep) {
-      return new Error(" You didn't placed the robot on the playground.");
+      return new Error("You didn't placed the robot on the playground");
     }
 
-    x = this._oCurrentPosition.x;
-    y = this._oCurrentPosition.y;
-    f = this._oCurrentPosition.f;
+    x = this.robotCurrentPosition.x;
+    y = this.robotCurrentPosition.y;
+    f = this.robotCurrentPosition.f;
 
     switch (f) {
       case 0:
@@ -82,10 +82,10 @@ var prototype = {
     }
 
     if (this._checkPositionInPlayground(x, y)) {
-      return new Error("Error! No such a direction");
+      return new Error("Error! No such direction");
     }
 
-    this._setRobotPosition(x, y, this._global.aDirections[f]);
+    this._setRobotPosition(x, y, this._global.robotDirections[f]);
 
     return this;
   },
@@ -98,8 +98,8 @@ var prototype = {
     if (!this._firstStep) {
       return new Error("That square is out of the playground.");
     }
-    this._oCurrentPosition.f =
-      this._oCurrentPosition.f + 1 > 3 ? 0 : this._oCurrentPosition.f + 1;
+    this.robotCurrentPosition.f =
+      this.robotCurrentPosition.f + 1 > 3 ? 0 : this.robotCurrentPosition.f + 1;
     return this;
   },
 
@@ -109,10 +109,10 @@ var prototype = {
    */
   left: function () {
     if (!this._firstStep) {
-      return new Error("Youdidn't placed the robot on the playground");
+      return new Error("That square is out of the playground.");
     }
-    this._oCurrentPosition.f =
-      this._oCurrentPosition.f - 1 < 0 ? 3 : this._oCurrentPosition.f - 1;
+    this.robotCurrentPosition.f =
+      this.robotCurrentPosition.f - 1 < 0 ? 3 : this.robotCurrentPosition.f - 1;
     return this;
   },
 
@@ -123,20 +123,20 @@ var prototype = {
    */
   report: function (msgObj) {
     if (!msgObj) {
-      var oPosition = this._getRobotPosition();
+      var robotPosition = this._getRobotPosition();
 
       if (
-        oPosition.x == undefined &&
-        oPosition.y == undefined &&
-        oPosition.f == undefined
+        robotPosition.x == undefined &&
+        robotPosition.y == undefined &&
+        robotPosition.f == undefined
       ) {
         return new Error("Robot is not on the playground");
       } else {
         return this._messenger.getMessage({
           msg: "robotPosition",
-          x: oPosition.x,
-          y: oPosition.y,
-          f: oPosition.f,
+          x: robotPosition.x,
+          y: robotPosition.y,
+          f: robotPosition.f,
         });
       }
     } else return this._messenger.getMessage(msgObj);
@@ -153,7 +153,7 @@ var prototype = {
 
   _validateInput: function (x, y, f) {
     if (!f) {
-      throw new TypeError("Error");
+      throw new TypeError("Error,can you please put correct commmand");
     }
 
     var _f = f.toUpperCase(),
@@ -175,9 +175,9 @@ var prototype = {
    * @private
    */
   _setRobotPosition: function (x, y, f) {
-    (this._oCurrentPosition.x = x),
-      (this._oCurrentPosition.y = y),
-      (this._oCurrentPosition.f = this._global.aDirections.indexOf(f));
+    (this.robotCurrentPosition.x = x),
+      (this.robotCurrentPosition.y = y),
+      (this.robotCurrentPosition.f = this._global.robotDirections.indexOf(f));
   },
   /**
    * Check position of robot in playground
@@ -195,9 +195,9 @@ var prototype = {
    */
   _getRobotPosition: function () {
     return {
-      x: this._oCurrentPosition.x,
-      y: this._oCurrentPosition.y,
-      f: this._global.aDirections[this._oCurrentPosition.f],
+      x: this.robotCurrentPosition.x,
+      y: this.robotCurrentPosition.y,
+      f: this._global.robotDirections[this.robotCurrentPosition.f],
     };
   },
 };

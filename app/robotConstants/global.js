@@ -12,9 +12,9 @@ global.playground = {
 };
 
 global.robot = {
-  aCommands: ["PLACE", "MOVE", "LEFT", "RIGHT", "REPORT"],
+  robotCommands: ["PLACE", "MOVE", "LEFT", "RIGHT", "REPORT"],
   initialCommands: ["PLACE"],
-  aDirections: ["NORTH", "EAST", "SOUTH", "WEST"],
+  robotDirections: ["NORTH", "EAST", "SOUTH", "WEST"],
 };
 
 global.messenger = {
@@ -22,9 +22,9 @@ global.messenger = {
     robotPosition: "Robot's Position ---> {x}, {y}, {f}",
   },
   oSubs: {
-    availableDirections: global.robot.aDirections.join(", "),
+    availableDirections: global.robot.robotDirections.join(", "),
     availableCommands: [
-      global.robot.aCommands.reduce(function (prev, cur) {
+      global.robot.robotCommands.reduce(function (prev, cur) {
         if (prev == "PLACE") prev = [prev, "X, Y, F"].join(" ");
         return prev + " | " + cur;
       }),

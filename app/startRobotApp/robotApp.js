@@ -1,4 +1,7 @@
 "use strict";
+
+// Start of the Robot app - Welcoming ouput
+
 const getOutput = require("./components/getOutput");
 
 var os = require("os"),
@@ -18,9 +21,9 @@ function RobotApp() {}
  */
 RobotApp.run = function () {
   stdout.write(
-    "WELCOME! Tell the Robot your first command. Begin by placing the Robot position on the playground - PLACE x, y, F." +
+    "WELCOME! Tell the Robot your first command. For example - PLACE x, y, F." +
       EOL +
-      "Click 'q' to exit." +
+      "CLICK 'q' to exit." +
       EOL +
       "> "
   );

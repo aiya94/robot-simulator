@@ -1,5 +1,7 @@
 var getAction = require("./getAction");
 
+// Users output
+
 var os = require("os"),
   stdout = process.stdout,
   EOL = os.EOL;

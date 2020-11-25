@@ -1,8 +1,6 @@
 "use strict";
 
-/** Connect all Dependencies
- *  It assembles a robot instance, injects its dependencies.
- */
+// Connect all Dependencies
 
 var Robot = require("./robotController/robot");
 var Playground = require("./robotPlayground/playground");

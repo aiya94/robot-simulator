@@ -27,7 +27,7 @@ function getAction(userCommand) {
   } else if (userCommand.match(/^report\s*$/i)) {
     result = robot.report();
   } else {
-    result = new Error("Error");
+    result = new Error("Error,can you please put correct commmand");
   }
   return result;
 }

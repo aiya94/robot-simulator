@@ -29,13 +29,13 @@ describe("Robot Playground testing", function () {
   });
 
   function insideXFalse(x, y) {
-    it("shoud return False if X is outside of Playground", function () {
+    it("shoud return False if X is inside of Playground", function () {
       expect(playground.checkPositionInPlayground(x, y)).toBe(false);
     });
   }
 
   function insideYFalse(x, y) {
-    it("shoud return False if Y is outside of Playground", function () {
+    it("shoud return False if Y is inside of Playground", function () {
       expect(playground.checkPositionInPlayground(x, y)).toBe(false);
     });
   }
