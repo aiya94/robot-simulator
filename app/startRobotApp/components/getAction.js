@@ -1,8 +1,8 @@
 var robot = require("../../connectRobot");
 
 /**
- * This parser encapsulates the task of reading a user's input
- * @param  {String} userCommand A command from a user, like "PLACE, MOVE, REPORT"
+ * User's input
+ * @param  {String} userCommand A command - "PLACE, MOVE, REPORT"
  * @return {Error|String|Object} Returns robot instance.
  * @private
  */
