@@ -1,6 +1,6 @@
 "use strict";
 
-//Jasmine test for Robot controller's functions
+// Jasmine test for Robot controller's functions
 
 var Robot = require("../../app/robotController/robot");
 var Playground = require("../../app/robotPlayground/playground");

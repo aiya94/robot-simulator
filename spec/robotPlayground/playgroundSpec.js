@@ -74,7 +74,7 @@ describe("Robot Playground testing", function () {
     }
   }
 
-  //Robots x position is outside playground
+  // Robots x position is outside playground
   for (
     var y = global.playground.startPositionY;
     y < global.playground.unitsY;
